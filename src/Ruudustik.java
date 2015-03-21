@@ -5,27 +5,29 @@
 import java.util.ArrayList;
 
 public class Ruudustik {
+
+//    Testimiseks
+//    public static void main(String[] args) {
+//        Ruudustik üheksa = new Ruudustik(9);
+//        System.out.println(üheksa.genereerimine());
+//    }
     
-    static int ridadeNr;
-    static int veergudeNr;
+    private int ridadeNr;
 
     //Konstruktor
 
-    Ruudustik(int ridadeNr, int veergudeNr) {
+    Ruudustik(int ridadeNr) {
         this.ridadeNr = ridadeNr;
-        this.veergudeNr = veergudeNr;
     }
 
     //Meetodid
 
     int getRidadeNr() {return ridadeNr;}
-    int getVeergudeNr() {return veergudeNr;}
 
     void setRidadeNr(int ridadeNr) {this.ridadeNr = ridadeNr;}
-    void setVeergudeNr(int veergudeNr) {this.veergudeNr = veergudeNr;}
 
-    public static ArrayList<ArrayList> genereerimine() {
-        ArrayList<ArrayList> veerud = new ArrayList<ArrayList>(veergudeNr);
+    public ArrayList<ArrayList> genereerimine() {
+        ArrayList<ArrayList> veerud = new ArrayList<ArrayList>();
         ArrayList<Integer> rida = new ArrayList<Integer>();
         int i = 0;
         while (i < ridadeNr) {
