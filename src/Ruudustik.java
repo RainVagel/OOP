@@ -8,10 +8,10 @@ import java.util.Random;
 class Ruudustik {
 
     //Testimiseks
-    public static void main(String[] args) {
-        Ruudustik heksa = new Ruudustik(9);
-        System.out.println(heksa.genereerimine());
-    }
+//    public static void main(String[] args) {
+//        Ruudustik heksa = new Ruudustik(9);
+//        System.out.println(heksa.genereerimine());
+//    }
     
     private int ridadeNr;
 
