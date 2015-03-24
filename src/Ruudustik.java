@@ -9,8 +9,8 @@ class Ruudustik {
 
     //Testimiseks
     public static void main(String[] args) {
-        Ruudustik üheksa = new Ruudustik(9);
-        System.out.println(üheksa.genereerimine());
+        Ruudustik heksa = new Ruudustik(9);
+        System.out.println(heksa.genereerimine());
     }
     
     private int ridadeNr;
