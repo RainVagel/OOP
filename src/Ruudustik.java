@@ -3,14 +3,15 @@
  */
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Ruudustik {
 
-//    Testimiseks
-//    public static void main(String[] args) {
-//        Ruudustik Ã¼heksa = new Ruudustik(9);
-//        System.out.println(Ã¼heksa.genereerimine());
-//    }
+    //Testimiseks
+    public static void main(String[] args) {
+        Ruudustik üheksa = new Ruudustik(9);
+        System.out.println(üheksa.genereerimine());
+    }
     
     private int ridadeNr;
 
@@ -19,6 +20,8 @@ public class Ruudustik {
     Ruudustik(int ridadeNr) {
         this.ridadeNr = ridadeNr;
     }
+    NumbriteGen lol = new NumbriteGen(9);
+    /*System.out.println(lol.numbrid());*/
 
     //Meetodid
 
@@ -31,7 +34,8 @@ public class Ruudustik {
         ArrayList<Integer> rida = new ArrayList<Integer>();
         int i = 0;
         while (i < ridadeNr) {
-            veerud.add(rida);
+        	NumbriteGen lol = new NumbriteGen(9);
+            veerud.add(lol.numbrid());
             i++;
         }
         return veerud;
