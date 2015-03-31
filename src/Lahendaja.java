@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 /**
  * Created by rainvagel on 27/03/15.
@@ -37,13 +36,10 @@ class Lahendaja {
     }
 
     static boolean onVahel (int arv1, int arv2, int arv3) {
-        if (arv1 <= arv3 && arv1 >= arv2) {
-            return true;
-        }
-        return false;
+        return arv1 <= arv3 && arv1 >= arv2;
     }
+
     static int[] getVäikeKast(int x, int y) {
-        int[] kast = new int[9];
         if (onVahel(x,0,2) && onVahel(y,0,2)) {
             return väikeseLoomine(0,2,0,2);
         }
@@ -74,7 +70,6 @@ class Lahendaja {
     }
 
     static int[] väikeseLoomine(int a, int b, int c, int d) {
-        int h = 0;
         int[] kast = new int[9];
         for (int i = a; i < b; i++) {
             for (int j = c; j < d; j++) {
@@ -85,9 +80,6 @@ class Lahendaja {
     }
 
     static boolean sobilik(VäikeRuut väikene, int num) {
-        if (sudoku[väikene.getRida()][väikene.getVeerg()] != 0) {
-            throw new RuntimeException("Juba on väärtus!");
-        }
         if (vaatlejaHoristonaalne(väikene.getRida(), num)) {
             return false;
         } else if (vaatlejaVerikaalne(väikene.getVeerg(), num)) {
@@ -124,13 +116,11 @@ class Lahendaja {
             return lahenda(getJärgmineVäikeRuut(hetkel));
         }
         for (int i = 1; i <= 9; i++) {
-            boolean valid = sobilik(hetkel, i);
-            if (!valid) {
+            if (!sobilik(hetkel,i)) {
                 continue;
             }
             sudoku[hetkel.getRida()][hetkel.getVeerg()] = i;
-            boolean lahendatud = lahenda(getJärgmineVäikeRuut(hetkel));
-            if (lahendatud) {
+            if (lahenda(getJärgmineVäikeRuut(hetkel))) {
                 return true;
             }
             else {
@@ -164,18 +154,12 @@ class Lahendaja {
         }
     }
 
-
     public static void main(String[] args) {
         System.out.println("Algne");
         väljasta(sudoku);
         System.out.println();
-        boolean lahendatud = lahenda(new VäikeRuut(0,0));
-        if (!lahendatud) {
-            System.out.println("Ei saa lahendada!");
-        }
-        else {
-            System.out.println("Lahendatud!");
-            väljasta(sudoku);
-        }
+        lahenda(new VäikeRuut(0,0));
+        System.out.println("Lahendatud!");
+        väljasta(sudoku);
     }
 }
